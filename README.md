@@ -1,78 +1,145 @@
 # Ecogenesia
 
-<|> Comment lancer le jeu Java ?
+Ecogenesia est un jeu Java développé dans le cadre d’un projet de conduite de projet objet à l’ENIB.
 
-Pour exécuter le jeu Ecogenesia, suivez les étapes suivantes :
+## Prérequis
 
-1 - Cloner le dépôt Git
+Avant de lancer le projet, assurez-vous d’avoir installé :
 
-Assurez-vous que Git est installé sur votre machine. Si ce n'est pas le cas, téléchargez-le et installez-le depuis https://git-scm.com/. Ouvrez un terminal ou une invite de commandes et exécutez la commande suivante : git clone https://gitlab.com/nom_utilisateur/ecogenesia.git. Accédez ensuite au répertoire cloné : cd ecogenesia.
+* Java JDK 21 ou supérieur
+* VS Code ou Eclipse (recommandé)
 
-2 - Installer et configurer Eclipse
+### Installer Java
 
-Téléchargez Eclipse IDE pour Java Developers depuis https://www.eclipse.org/downloads/. Installez Eclipse en suivant les instructions de l'installateur. Lancez Eclipse et configurez votre espace de travail. Importez le projet Java dans Eclipse : cliquez sur File > Import. Sélectionnez Existing Projects into Workspace. Naviguez jusqu’au répertoire cloné et cliquez sur Finish. Exécuter le jeu.
+Téléchargez un JDK récent ici :
 
-Assurez-vous que toutes les dépendances nécessaires sont installées. Si des bibliothèques externes sont utilisées, elles doivent être ajoutées au chemin de build du projet. Dans Eclipse, localisez le fichier contenant la méthode main (souvent dans une classe nommée Main ou similaire). Faites un clic droit sur le fichier et sélectionnez Run As > Java Application.
+* Eclipse Temurin : [https://adoptium.net/temurin/releases/](https://adoptium.net/temurin/releases/)
 
-3 - Résolution des problèmes
+Après installation, vérifiez que Java fonctionne :
 
-Si des erreurs surviennent : vérifiez que toutes les bibliothèques nécessaires sont correctement importées. Consultez les logs dans la console Eclipse pour identifier les problèmes spécifiques. En cas de besoin, ouvrez une issue sur le dépôt Git ou contactez l'équipe de développement.
+```bash
+java -version
+javac -version
+```
 
-<|> Portfolio
+Vous devriez obtenir une version 21 ou supérieure.
 
-05/11/2024 : Mise en place initiale
+---
 
-    Configuration Git :
-    - Déploiement du dépôt Git.
-    - Import initial du projet pour centraliser les contributions de l'équipe.
+# Installation du projet
 
-12/11/2024 : Avancées graphiques et structurelles
+## 1. Cloner le repository
 
-    Assets graphiques :
-    - Création de 8 frames pour l'animation de l’éolienne.
-    - Finalisation de l’asset graphique de la serre.
+```bash
+git clone https://github.com/alexenvol/ecogenesia.git
+```
 
-    Analyse du code :
-    - Début de l’analyse du fichier DepollutionBuilding.java : objectif d’agrandir l’inventaire et d’ajouter d’autres bâtiments fonctionnels.
+Puis :
 
-    Modifications en cours :
-    - Menu "Options" dans UI.java (non poussé).
+```bash
+cd ecogenesia
+```
 
-    Sound Design : 
-    - Intégration d’un son fonctionnel (non poussé).
+---
 
-19/11/2024 : Avancées mécaniques et optimisation
+# Lancer le projet avec VS Code
 
-    Mécaniques de jeu :
-    - Introduction de la dépollution de la mer et des arbres.
-    - Ajout d’une zone dédiée au dépôt.
+## Extensions recommandées
 
-    Optimisation :
-    - Nettoyage du code mort.
-    - Débogage de la musique et de l’inventaire.
+Installez les extensions suivantes :
 
-26/11/2024 : Ajout du didacticiel et corrections
+* Extension Pack for Java
+* Language Support for Java™ by Red Hat
 
-    Implémentation :
-    - Création du didacticiel interactif.
+## Ouvrir le projet
 
-    Débogage :
-    - Correction d’un bug lié à la barre de dépollution après un succès.
-    - Résolution d’un problème avec la musique en arrière-plan.
+1. Ouvrir VS Code
+2. File → Open Folder
+3. Sélectionner le dossier `Ecogenesia`
 
-03/12/2024 : Nouvelles fonctionnalités et planning final
+## Configurer le JDK
 
-    Nouveautés :
-     - Introduction d’un labyrinthe dans le jeu.
+1. `Ctrl + Shift + P`
+2. Rechercher :
 
-    Débogages :
-     - Réparation de la barre de son des effets.
+```text
+Java: Configure Java Runtime
+```
 
-    Gestion du projet :
-    - Mise à jour du diagramme de Gantt.
-    - Planification des dernières tâches pour la semaine 50 (dernière semaine de travail).
+3. Sélectionner le JDK 21 installé.
 
-10/12/2024 : Finalisation du projet
+## Nettoyer le workspace Java
 
-    GIT :
-    - Merge de la branche develop sur la branche main
+1. `Ctrl + Shift + P`
+2. Rechercher :
+
+```text
+Java: Clean Java Language Server Workspace
+```
+
+3. Redémarrer VS Code.
+
+---
+
+# Compiler et lancer le jeu
+
+Depuis un terminal à la racine du projet :
+
+## Compilation
+
+```bash
+javac -d bin src/**/*.java
+```
+
+## Exécution
+
+```bash
+java -cp bin main.Main
+```
+
+---
+
+# Structure du projet
+
+```text
+Ecogenesia/
+├── src/        # Code source Java
+├── res/        # Ressources du jeu
+├── bin/        # Fichiers compilés
+└── README.md
+```
+
+---
+
+# Problèmes fréquents
+
+## Les classes `String`, `Object` ou `JFrame` ne sont pas reconnues
+
+Le JDK Java n’est probablement pas configuré correctement.
+
+Vérifiez :
+
+```bash
+java -version
+```
+
+et reconfigurez le runtime Java dans VS Code.
+
+---
+
+## Erreur de classpath
+
+Essayez :
+
+```text
+Ctrl + Shift + P
+→ Java: Clean Java Language Server Workspace
+```
+
+Puis redémarrez VS Code.
+
+---
+
+# Auteurs
+
+Projet réalisé dans le cadre du module de conduite de projet objet à l’ENIB.
