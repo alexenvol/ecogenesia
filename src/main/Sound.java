@@ -72,23 +72,32 @@ public class Sound {
 	    }
 	}
 
-	public void play() {
-		
-		clip.start();
-	}
-	
-	public void loop() {
-		
-		clip.loop(Clip.LOOP_CONTINUOUSLY);
-	}
-	
-	public void stop() {
-	    if (clip != null) {
-	        clip.stop();
-	    } else {
-	        System.err.println("Error: Attempted to stop a null clip!");
-	    }
-	}
+public void play() {
+
+    if (clip != null) {
+        clip.start();
+    } else {
+        System.err.println("Impossible de jouer le son : clip null.");
+    }
+}
+
+public void loop() {
+
+    if (clip != null) {
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
+    } else {
+        System.err.println("Impossible de boucler le son : clip null.");
+    }
+}
+
+public void stop() {
+
+    if (clip != null) {
+        clip.stop();
+    } else {
+        System.err.println("Error: Attempted to stop a null clip!");
+    }
+}
 
 	public void checkVolume() {
 	    if (fc == null) {
