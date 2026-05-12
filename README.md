@@ -4,9 +4,9 @@
 
 Dans un monde ravagé par la pollution et les activités humaines, la nature est en train de disparaître.
 
-Votre mission sera d’explorer une carte dévastée, récupérer des déchets, nettoyer les zones contaminées et redonner vie à l’environnement.
+Votre mission sera d’explorer un labyrinthe dévasté et redonner vie à l’environnement.
 
-Entre exploration, gestion des ressources et progression dans différentes zones, Ecogenesia propose une aventure inspirée des enjeux écologiques actuels dans un univers rétro en 2D.
+Ecogenesia propose une micro-aventure inspirée des enjeux écologiques actuels dans un univers rétro en 2D.
 
 Parviendrez-vous à restaurer l’équilibre de ce monde avant qu’il ne soit trop tard ?
 
