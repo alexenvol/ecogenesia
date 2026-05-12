@@ -1,0 +1,41 @@
+# === Fichiers compilés ===
+*.class
+bin/
+out/
+
+# === Fichiers générés par l'IDE Eclipse ===
+*.pydevproject
+*.project
+*.classpath
+.settings/
+.metadata/
+.recommenders/
+build/
+
+# === Fichiers générés par Maven ou Gradle ===
+target/
+*.war
+*.ear
+
+# === Fichiers temporaires ===
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# === Configurations spécifiques à un système ===
+.vscode/
+.idea/
+*.iml
+
+# === Exclure les fichiers jar inclus dans le dépôt ===
+*.jar
+*.zip
+
+# === Ignorer les fichiers spécifiques à Git ===
+!.gitignore
+res/sound/jeu.wav
+*.wav
