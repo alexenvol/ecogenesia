@@ -168,10 +168,15 @@ public class KeyHandler implements KeyListener {
 	        showDebugText = !showDebugText;
 	    }
 	    if (code == KeyEvent.VK_R) {
-	        switch (gp.currentMap) {
-	            case 0 -> gp.tileM.loadMap("/maps/worldmap.txt", 0);
-	            case 1 -> gp.tileM.loadMap("/maps/indoor01.txt", 1);
-	        }
+switch (gp.currentMap) {
+    case 0:
+        gp.tileM.loadMap("/maps/worldmap.txt", 0);
+        break;
+
+    case 1:
+        gp.tileM.loadMap("/maps/indoor01.txt", 1);
+        break;
+}
 	    }
 	    
 	    if (code == KeyEvent.VK_LEFT) {
