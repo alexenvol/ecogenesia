@@ -1,5 +1,15 @@
 # Ecogenesia
 
+## Un monde à sauver
+
+Dans un monde ravagé par la pollution et les activités humaines, la nature est en train de disparaître.
+
+Votre mission sera d’explorer une carte dévastée, récupérer des déchets, nettoyer les zones contaminées et redonner vie à l’environnement.
+
+Entre exploration, gestion des ressources et progression dans différentes zones, Ecogenesia propose une aventure inspirée des enjeux écologiques actuels dans un univers rétro en 2D.
+
+Parviendrez-vous à restaurer l’équilibre de ce monde avant qu’il ne soit trop tard ?
+
 Ecogenesia est un jeu Java développé dans le cadre d’un projet de conduite de projet objet à l’ENIB.
 
 ## Prérequis
@@ -83,19 +93,65 @@ Java: Clean Java Language Server Workspace
 
 # Compiler et lancer le jeu
 
-Depuis un terminal à la racine du projet :
-
 ## Compilation
 
-```bash
-javac -d bin src/**/*.java
+Depuis un terminal PowerShell dans VS Code :
+
+```powershell
+javac -d bin (Get-ChildItem -Recurse -Filter *.java src).FullName
 ```
+
+## Copier les ressources du jeu
+
+```powershell
+Copy-Item -Recurse -Force res/* bin/
+```
+
+Cette étape est importante pour copier :
+
+* les musiques,
+* les effets sonores,
+* les textures,
+* les cartes,
+* les ressources du jeu.
 
 ## Exécution
 
-```bash
+```powershell
 java -cp bin main.Main
 ```
+
+---
+
+# Lancer directement depuis VS Code
+
+Le bouton `Run Java` fonctionne également.
+
+Créer le fichier :
+
+```text
+.vscode/settings.json
+```
+
+avec le contenu suivant :
+
+```json
+{
+    "java.project.sourcePaths": [
+        "src",
+        "res"
+    ]
+}
+```
+
+Puis dans VS Code :
+
+```text
+Ctrl + Shift + P
+→ Java: Clean Java Language Server Workspace
+```
+
+et redémarrer VS Code.
 
 ---
 
