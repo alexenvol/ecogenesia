@@ -37,5 +37,3 @@ Thumbs.db
 
 # === Ignorer les fichiers spécifiques à Git ===
 !.gitignore
-res/sound/jeu.wav
-*.wav
