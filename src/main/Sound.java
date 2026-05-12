@@ -16,13 +16,13 @@ public class Sound {
 	
 	public Sound() {
 		
-		soundURL[0] = getClass().getResource("/sound/menu_principal.wav");
-		soundURL[1] = getClass().getResource("/sound/coin.wav");
-		soundURL[2] = getClass().getResource("/sound/jeu.wav");
-		soundURL[3] = getClass().getResource("/sound/menu.wav");
-		soundURL[4] = getClass().getResource("/sound/fin.wav");
-		soundURL[5] = getClass().getResource("/sound/cursor.wav");
-		soundURL[6] = getClass().getResource("/sound/ocean.wav");
+soundURL[0] = getClass().getResource("/sound/menu_principal.mp3");
+soundURL[1] = getClass().getResource("/sound/coin.mp3");
+soundURL[2] = getClass().getResource("/sound/jeu.mp3");
+soundURL[3] = getClass().getResource("/sound/menu.mp3");
+soundURL[4] = getClass().getResource("/sound/fin.mp3");
+soundURL[5] = getClass().getResource("/sound/cursor.mp3");
+soundURL[6] = getClass().getResource("/sound/ocean.mp3");
 	}
 	
 	public void setFile(int i) {
@@ -72,32 +72,27 @@ public class Sound {
 	    }
 	}
 
-public void play() {
-
-    if (clip != null) {
-        clip.start();
-    } else {
-        System.err.println("Impossible de jouer le son : clip null.");
-    }
+	public void play() {
+		
+		if (clip != null) {
+    clip.start();
 }
-
-public void loop() {
-
-    if (clip != null) {
-        clip.loop(Clip.LOOP_CONTINUOUSLY);
-    } else {
-        System.err.println("Impossible de boucler le son : clip null.");
-    }
+	}
+	
+	public void loop() {
+		
+		if (clip != null) {
+    clip.loop(Clip.LOOP_CONTINUOUSLY);
 }
-
-public void stop() {
-
-    if (clip != null) {
-        clip.stop();
-    } else {
-        System.err.println("Error: Attempted to stop a null clip!");
-    }
-}
+	}
+	
+	public void stop() {
+	    if (clip != null) {
+	        clip.stop();
+	    } else {
+	        System.err.println("Error: Attempted to stop a null clip!");
+	    }
+	}
 
 	public void checkVolume() {
 	    if (fc == null) {
